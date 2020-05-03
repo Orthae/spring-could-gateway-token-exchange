@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  example:
+    container_name: example
+    build:
+      context: ../java/example
+      dockerfile: example-dockerfile
+    volumes:
+      - ./volumes/example:/root/.gradle/
+  identity:
+    container_name: identity
+    build:
+      context: ../java/identity
+      dockerfile: identity-dockerfile
+    volumes:
+      - ./volumes/identity:/root/.gradle/
+  gateway:
+    container_name: gateway
+    build:
+      context: ../java/gateway/
+      dockerfile: gateway-dockerfile
+    volumes:
+      - ./volumes/gateway:/root/.gradle/
+    ports:
+      - 8080:8080
