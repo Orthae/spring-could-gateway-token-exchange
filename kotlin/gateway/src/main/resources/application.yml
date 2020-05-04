@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: example
+          uri: http://example:8080/
+          predicates:
+            - Path=/example/**
+        - id: identity
+          uri: http://identity:8080/
+          predicates:
+            - Path=/identity/**
