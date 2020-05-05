@@ -1,4 +1,4 @@
-package orthae.com.github.tokenexchangegateway.java;
+package orthae.com.github.tokenexchangegatewayjava;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
