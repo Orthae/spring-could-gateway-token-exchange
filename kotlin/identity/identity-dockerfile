@@ -1,0 +1,12 @@
+FROM azul/zulu-openjdk-alpine:11.0.7
+
+RUN mkdir /temp
+RUN wget -P /temp/ https://services.gradle.org/distributions/gradle-6.3-bin.zip
+RUN unzip /temp/gradle-6.3-bin.zip -d /temp/
+RUN mv /temp/gradle-6.3/ /gradle/
+
+COPY build.gradle.kts /spring-boot/build.gradle.kts
+COPY settings.gradle.kts /spring-boot/settings.gradle.kts
+COPY src/ /spring-boot/src
+
+CMD cd /spring-boot/ && /gradle/bin/gradle bootRun

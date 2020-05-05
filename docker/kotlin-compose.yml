@@ -4,17 +4,17 @@ services:
   example:
     container_name: example
     build:
-      context: ../java/example
+      context: ../kotlin/example
       dockerfile: example-dockerfile
   identity:
     container_name: identity
     build:
-      context: ../java/identity
+      context: ../kotlin/identity
       dockerfile: identity-dockerfile
   gateway:
     container_name: gateway
     build:
-      context: ../java/gateway/
+      context: ../kotlin/gateway/
       dockerfile: gateway-dockerfile
     ports:
       - 8080:8080
